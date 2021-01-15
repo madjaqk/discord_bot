@@ -37,7 +37,8 @@ async def on_message(message):
         await message.add_reaction(client.get_emoji(557365346265202688))
 
     if "secret" in msg_content:
-        await message.channel.send(file=discord.File("./LOZ_Secret.wav"))
+        pass
+        # await message.channel.send(file=discord.File("./LOZ_Secret.wav"))
 
     if re.search(r"\bmemes?\b", msg_content):
         await message.channel.send(f"```{random_cow()}```")
