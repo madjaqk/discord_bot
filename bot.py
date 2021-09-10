@@ -41,7 +41,8 @@ async def on_message(message):
         # await message.channel.send(file=discord.File("./LOZ_Secret.wav"))
 
     if re.search(r"\bmemes?\b", msg_content):
-        await message.channel.send(f"```{random_cow()}```")
+        pass
+        # await message.channel.send(f"```{random_cow()}```")
 
 @client.event
 async def on_ready():
