@@ -10,7 +10,10 @@ logging.basicConfig(level=logging.INFO)
 
 TOKEN = config("DISCORD_TOKEN")
 
-client = discord.Client()
+intents = discord.Intents.default()
+intents.messages = True
+
+client = discord.Client(intents=intents)
 
 def is_supervocalic(text):
     vowels = {v: False for v in ("a", "e", "i", "o", "u")}
@@ -29,6 +32,8 @@ async def on_message(message):
         return
 
     msg_content = message.content.lower()
+    print("*")
+    print(msg_content)
 
     if "bug" in msg_content:
         await message.add_reaction("🐛")
