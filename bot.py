@@ -32,8 +32,6 @@ async def on_message(message):
         return
 
     msg_content = message.content.lower()
-    print("*")
-    print(msg_content)
 
     if "bug" in msg_content:
         await message.add_reaction("🐛")
@@ -51,6 +49,6 @@ async def on_message(message):
 
 @client.event
 async def on_ready():
-    print(f"Connected as {client.user}")
+    logging.info(f"Connected as {client.user}")
 
 client.run(TOKEN)
